@@ -42,11 +42,5 @@ random_message_start = random.choice(YAMLCONFIG['Groups'][random_group]['Message
 random_message_end = random.choice(YAMLCONFIG['Groups'][random_group]['Message End'])
 sentence = random_message_start.replace("$name", random_contact).replace("$HHH", HHH).replace("$time_of_day", time_of_day).replace("$GGG", GGG).replace("$TTT", TTT) + " " + random_message_end.replace("$name", random_contact).replace("$HHH", HHH).replace("$time_of_day", time_of_day).replace("$GGG", GGG).replace("$TTT", TTT)
 
-print "Group: %s" % random_group
-print "Contact: %s" % random_contact
-print "Phone: %s" % random_contact_number
-print "iMessage: %s" % sentence
-
-command = '/Users/tdime/KeepInTouch.sh %s %s %s "%s"' % (random_group, random_contact, random_contact_number, sentence)
-subprocess.call(command, shell=True)
+subprocess.call('~/KeepInTouch.sh %s %s %s "%s"' % (random_group, random_contact, random_contact_number, sentence), shell=True)
 
