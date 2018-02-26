@@ -4,43 +4,64 @@ import random
 import datetime
 import subprocess
 
-hourNow = datetime.datetime.now().hour
-
-time_of_day=""
-HHH=""
-GGG=""
-TTT=""
-
-if ( hourNow >= 0) and ( hourNow < 12 ):
-    time_of_day = "morning"
-    HHH = "have"
-    GGG = "is"
-    TTT = "tonight"
-elif ( hourNow >= 12 ) and ( hourNow <= 17 ):
-	time_of_day = "afternoon"
-	HHH = "are having"
-	GGG = "is going"
-	TTT = "later"
-elif hourNow >= 17:
-  	time_of_day = "evening"
-  	HHH = "had"
-  	GGG = "has been"
-  	TTT = ""
-else:
-	exit()
-
 CONFIGFILE = "./KeepInTouchConfig.yaml"
+REPLACE_VARIABLES = ['name','HHH','GGG','TTT','time_of_day']
 
 with open(CONFIGFILE) as yamlConfigFile:
-    YAMLCONFIG = yaml.load(yamlConfigFile)
+  YAMLCONFIG = yaml.load(yamlConfigFile)
 
-random_group = random.choice(YAMLCONFIG['Groups'].keys())
+class TextContact(object):
 
-random_contact = random.choice(YAMLCONFIG['Groups'][random_group]['Contacts'].keys())
-random_contact_number = YAMLCONFIG['Groups'][random_group]['Contacts'][random_contact]
-random_message_start = random.choice(YAMLCONFIG['Groups'][random_group]['Message Start'])
-random_message_end = random.choice(YAMLCONFIG['Groups'][random_group]['Message End'])
-sentence = random_message_start.replace("$name", random_contact).replace("$HHH", HHH).replace("$time_of_day", time_of_day).replace("$GGG", GGG).replace("$TTT", TTT) + " " + random_message_end.replace("$name", random_contact).replace("$HHH", HHH).replace("$time_of_day", time_of_day).replace("$GGG", GGG).replace("$TTT", TTT)
+    def __init__(self, hour):
 
-subprocess.call('~/KeepInTouch.sh %s %s %s "%s"' % (random_group, random_contact, random_contact_number, sentence), shell=True)
+      self.hourNow = hour
+
+      self.get_time_variables()
+      self.group = random.choice(YAMLCONFIG['Groups'].keys())
+      self.name = random.choice(YAMLCONFIG['Groups'][self.group]['Contacts'].keys())
+      self.number = YAMLCONFIG['Groups'][self.group]['Contacts'][self.name]
+      self.random_message_start = random.choice(YAMLCONFIG['Groups'][self.group]['Message Start'])
+      self.random_message_end = random.choice(YAMLCONFIG['Groups'][self.group]['Message End'])
+      
+      self.form_message()
+
+      subprocess.call('~/KeepInTouch.sh %s %s %s "%s"' % (self.group, self.name, self.number, self.message), shell=True)
+
+    def get_time_variables(self):
+      if (self.hourNow >= 7) and (self.hourNow < 12):
+        self.time_of_day = "morning"
+        self.HHH = "have"
+        self.GGG = "is"
+        self.TTT = "tonight"
+      elif (self.hourNow >= 12) and (self.hourNow <= 17):
+        self.time_of_day = "afternoon"
+        self.HHH = "are having"
+        self.GGG = "is going"
+        self.TTT = "later"
+      elif self.hourNow >= 17:
+        self.time_of_day = "evening"
+        self.HHH = "had"
+        self.GGG = "has been"
+        self.TTT = ""
+      else:
+        exit()
+
+    def form_message(self):
+      self.start_message = self.replace_variables(self.random_message_start)
+      self.end_message = self.replace_variables(self.random_message_end)
+      self.message = "%s %s" % (self.start_message, self.end_message)
+
+    def replace_variables(self, sentence):
+      for variable in REPLACE_VARIABLES:
+        sentence = sentence.replace("$%s" % variable, eval('self.%s' % variable))
+
+      return sentence
+
+
+if __name__ == "__main__":
+  hour = datetime.datetime.now().hour
+  TextContact(hour)
+
+
+
 
