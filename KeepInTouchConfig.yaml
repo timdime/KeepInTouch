@@ -1,0 +1,107 @@
+Groups:
+  Love:
+    Contacts: 
+      Amanda: 10065050078
+    Message Start: ["You put the smile on my face, the sparkle in my eyes, and the beat in my heart.",
+                "The stars must be jealous. You shine way better than they do!",
+                "Roses are red. Violets are blue. I'm in love. The reason is YOU!",
+                "If I could be any part of you I would be your tears. Conceived in your heart, born in your eyes, lived on your cheeks, and die on your lips.",
+                "The smallest work I know is ‘I', the sweetest word I know is ‘love', and the only thing that will remind me of that will be ‘you'.",
+                "FYI: I love my woman.",
+                "I love you from my head to my toes.",
+                "I love you more than I did yesterday but not more than I will tomorrow.",
+                "I love all those things you don't do: you never tried to change me, you never minded my quirky moods, you never laughed when I attempted to be serious, and you never turned away when I needed you most. I love you.",
+                "Just in case you didn't know, I will be loving you forever and always!",
+                "I hope you finally realize that I'll love you until the end, because you're not just my woman, you're also my best friend!",
+                "The only time I stupidly smile at my phone is when I get text messages from you.",
+                "If I had my life to live over, I would find you sooner so I could love you longer.","I love you yesterday, I love you still, I always have, I always will.",
+                "You will forever be my always.",
+                "I still fall for you everyday.",
+                "P.S. I love you!",
+                "You are my happy ending.",
+                "In a sea of people, my eyes will always search for you.",
+                "You are my greatest adventure.",
+                "Happiness is being married to your best friend.",
+                "Every love story is beautiful but ours is my favorite.",
+                "When I tell you I love you, I don't say it out of habit or to make conversation, I say it to remind you that you are the best thing that ever happened to me.",
+                "Without you, I'm nothing. With you, we're something. Together we're everything.",
+                "The greatest achievement in my life thus far has been to love you and be loved by you.",
+                "For once I don't have to try to be happy because when I'm with you it just happens.",
+                "No matter what happens, we'll face it together. Because I love you.",
+                "I just want you, that's it. All your flaws, mistakes, smiles, giggles, jokes, sarcasm. Everything. I just want you.",
+                "I'm amazed when I look at you, not just because of our looks, but because everything I've ever wanted is right in front of me.",
+                "You are my best friend, my human diary, and my other half. You mean the world to me and I love you.",
+                "I vow to still grab your butt even when you're old and wrinkly.",
+                "Grow old with me. The best is yet to come.",
+                "I love you and it's getting worse.",
+                "What do you think about putting the kids to bed early tonight?",
+                "I love being your husband.",
+                "The best thing I see each day is your smile.",
+                "Hey, hottie! Got plans tonight?",
+                "You are my one of a kind!",
+                "Perfect night to snuggle. Meet me at 0 pm.",
+                "I need a kiss. And a hug. And you.",
+                "I love you in the morning, in the middle of the day, in the hours we're together and the hours we're away.",
+                "I'm much more me when I'm with you.",
+                "No matter how much I say I love you, I always love you more than that.",
+                "My perfect day has nothing to do with the weather or what I'm doing. My perfect day is whenever I'm with you."]
+    Message End: [
+      "I love you $name!",
+      "I miss you!",
+      "See you soon!",
+      "What are you and the kids up to today?"]
+  Family:
+    Contacts:
+      Amy: 16605666783
+      Jack: 16600650106
+      Mom: 16606601166
+      Dad: 16600106038
+      Leah: 18003063831
+      Jenny: 18000666506
+      Alex: 18006688006
+      Danny: 18006770681
+      Marilyn: 18006683700
+      Ralph: 18006618060
+      Mike: 18005786160
+    Message Start: [
+      "Good $time_of_day $name,",
+      "Hey $name",
+      "What's up $name,",
+      "$name- I've been thinking about you this $time_of_day,",
+      "I've been meaning to talk to you $name,"]
+    Message End: [
+      "I hope that you $HHH a great day.",
+      "I hope that your day $GGG great.",
+      "I hope all has been well at home.",
+      "can you call sometime soon?"]
+  Friends:
+    Contacts:
+      Nick: 18000660511
+      Regan: 16606700000
+      Kevin: 10650316613
+      Jack: 16600650106
+      Bill: 16176056307
+      Matt: 10067551306
+      Dan: 16103160100
+      Baker: 10065668066
+      JC: 16607655816
+      Pete: 10065566606
+      Andy: 16600075186
+      Steve: 16606607880
+      Drew: 16608816076
+      Rich: 16135305117
+      Red: 18008006571
+      Mike: 10087100886
+      Jim: 10066371606
+      Marshall: 10636808875
+      Pete: 16060560060
+    Message Start: [
+      "Good day $name",
+      "Hey $name",
+      "What's up $name",
+      "Yo $name"]
+    Message End: [
+      "what's going on $TTT?", 
+      "what are you doing later?",
+      "what are you doing this weekend?",
+      "how's everything been going?"]
